@@ -7,7 +7,6 @@ import type {
   ImportantLink,
   FundraisingConfig,
   CalendarEvent,
-  SchedulingConfig,
   KanbanTask,
   SectionVisibility,
 } from "@/types";
@@ -24,9 +23,6 @@ interface DashboardStore extends DashboardConfig {
   // Event actions
   addEvent: (event: CalendarEvent) => void;
   removeEvent: (id: string) => void;
-
-  // Scheduling actions
-  updateScheduling: (config: Partial<SchedulingConfig>) => void;
 
   // Kanban actions
   addTask: (task: KanbanTask) => void;
@@ -96,23 +92,6 @@ const defaultState: DashboardConfig = {
       description: "Weekly team sync meeting",
     },
   ],
-  scheduling: {
-    slots: [
-      { id: "1", dayOfWeek: 1, startTime: "09:00", endTime: "12:00", available: true },
-      { id: "2", dayOfWeek: 1, startTime: "13:00", endTime: "17:00", available: true },
-      { id: "3", dayOfWeek: 2, startTime: "09:00", endTime: "12:00", available: true },
-      { id: "4", dayOfWeek: 2, startTime: "13:00", endTime: "17:00", available: true },
-      { id: "5", dayOfWeek: 3, startTime: "09:00", endTime: "12:00", available: true },
-      { id: "6", dayOfWeek: 3, startTime: "13:00", endTime: "17:00", available: true },
-      { id: "7", dayOfWeek: 4, startTime: "09:00", endTime: "12:00", available: true },
-      { id: "8", dayOfWeek: 4, startTime: "13:00", endTime: "17:00", available: true },
-      { id: "9", dayOfWeek: 5, startTime: "09:00", endTime: "12:00", available: true },
-      { id: "10", dayOfWeek: 5, startTime: "13:00", endTime: "15:00", available: true },
-    ],
-    consultationDurationMinutes: 30,
-    bufferMinutes: 15,
-    maxBookingsPerDay: 8,
-  },
   kanbanTasks: [
     {
       id: "1",
@@ -146,7 +125,6 @@ const defaultState: DashboardConfig = {
     calendar: true,
     links: true,
     fundraising: true,
-    scheduling: true,
     kanban: true,
   },
 };
@@ -168,9 +146,6 @@ export const useDashboardStore = create<DashboardStore>()(
 
       addEvent: (event) => set((s) => ({ events: [...s.events, event] })),
       removeEvent: (id) => set((s) => ({ events: s.events.filter((e) => e.id !== id) })),
-
-      updateScheduling: (config) =>
-        set((s) => ({ scheduling: { ...s.scheduling, ...config } })),
 
       addTask: (task) => set((s) => ({ kanbanTasks: [...s.kanbanTasks, task] })),
       removeTask: (id) =>
