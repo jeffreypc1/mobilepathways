@@ -16,10 +16,6 @@ const sectionLabels: Record<keyof SectionVisibility, { label: string; descriptio
     label: "Fundraising Tracker",
     description: "Visual progress bar showing goal vs. current funds",
   },
-  scheduling: {
-    label: "Scheduling",
-    description: "Consultation booking tool for community members",
-  },
   kanban: {
     label: "Staff Kanban Board",
     description: "Drag-and-drop task board for staff management",

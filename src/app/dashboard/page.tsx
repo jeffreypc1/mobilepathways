@@ -104,19 +104,6 @@ export default function DashboardHome() {
           </Link>
         )}
 
-        {sectionVisibility.scheduling && (
-          <Link href="/dashboard/scheduling" className="block">
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow">
-              <h2 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">
-                Scheduling
-              </h2>
-              <p className="text-sm text-slate-700">Book a consultation</p>
-              <p className="text-xs text-slate-500 mt-1">
-                {fundraising.campaignName ? "Slots available" : "Check availability"}
-              </p>
-            </div>
-          </Link>
-        )}
       </div>
     </div>
   );

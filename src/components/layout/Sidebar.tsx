@@ -8,7 +8,6 @@ const userLinks = [
   { href: "/dashboard/calendar", label: "Event Calendar", icon: "📅" },
   { href: "/dashboard/links", label: "Important Links", icon: "🔗" },
   { href: "/dashboard/fundraising", label: "Fundraising", icon: "💰" },
-  { href: "/dashboard/scheduling", label: "Scheduling", icon: "🕐" },
   { href: "/dashboard/kanban", label: "Staff Board", icon: "📋" },
 ];
 
@@ -17,7 +16,6 @@ const adminLinks = [
   { href: "/admin/links", label: "Manage Links", icon: "🔗" },
   { href: "/admin/fundraising", label: "Fundraising Settings", icon: "💰" },
   { href: "/admin/visibility", label: "Section Visibility", icon: "👁️" },
-  { href: "/admin/scheduling", label: "Scheduling Settings", icon: "🕐" },
 ];
 
 export default function Sidebar() {

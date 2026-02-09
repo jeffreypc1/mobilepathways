@@ -22,12 +22,6 @@ const adminSections = [
     description: "Toggle which dashboard sections are visible to users.",
     icon: "👁️",
   },
-  {
-    href: "/admin/scheduling",
-    title: "Scheduling Settings",
-    description: "Configure consultation availability, duration, and booking limits.",
-    icon: "🕐",
-  },
 ];
 
 export default function AdminHome() {

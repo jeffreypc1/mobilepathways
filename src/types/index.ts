@@ -23,21 +23,6 @@ export interface CalendarEvent {
   description: string;
 }
 
-export interface SchedulingSlot {
-  id: string;
-  dayOfWeek: number; // 0-6 (Sun-Sat)
-  startTime: string; // "HH:mm"
-  endTime: string; // "HH:mm"
-  available: boolean;
-}
-
-export interface SchedulingConfig {
-  slots: SchedulingSlot[];
-  consultationDurationMinutes: number;
-  bufferMinutes: number;
-  maxBookingsPerDay: number;
-}
-
 export interface KanbanTask {
   id: string;
   title: string;
@@ -52,7 +37,6 @@ export interface SectionVisibility {
   calendar: boolean;
   links: boolean;
   fundraising: boolean;
-  scheduling: boolean;
   kanban: boolean;
 }
 
@@ -60,7 +44,6 @@ export interface DashboardConfig {
   links: ImportantLink[];
   fundraising: FundraisingConfig;
   events: CalendarEvent[];
-  scheduling: SchedulingConfig;
   kanbanTasks: KanbanTask[];
   sectionVisibility: SectionVisibility;
 }
